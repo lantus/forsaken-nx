@@ -4960,7 +4960,9 @@ void InitRenderBufs(/* LPDIRECT3DDEVICE lpDev */) // bjd
 	DebugPrintf("InitRenderBufs\n");
 	ReleaseRenderBufs();
 	// just vertex data
+	svcOutputDebugString("1",10);
 	FSCreateDynamicVertexBuffer(&RenderBufs[0], 32767);
+	svcOutputDebugString("2",10);
 	FSCreateDynamicVertexBuffer(&RenderBufs[1], 32767);
 	// index data as well
 	FSCreateDynamicVertexBuffer(&RenderBufs[2], 32767);

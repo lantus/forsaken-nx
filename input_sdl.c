@@ -529,11 +529,15 @@ bool joysticks_init(void)
 	joysticks_cleanup();
 
 	Num_Joysticks = SDL_NumJoysticks();
-
-	DebugPrintf( "joysticks_init: %d joysticks connected\n", Num_Joysticks );
-
+	
 	if (Num_Joysticks > MAX_JOYSTICKS)
 		Num_Joysticks = MAX_JOYSTICKS;
+	
+#ifdef __SWITCH__
+	Num_Joysticks = 1;
+#endif	
+
+	DebugPrintf( "joysticks_init: %d joysticks connected\n", Num_Joysticks );
 
 	for (i = 0; i < Num_Joysticks; i++)
 	{
@@ -560,7 +564,7 @@ bool joysticks_init(void)
 		// TODO
 		// JoystickInfo[i].NumBalls = SDL_JoystickNumBalls(joy);
 
-		JoystickInfo[i].Name = strdup( SDL_JoystickName(i) );
+		JoystickInfo[i].Name = strdup( "Switch Joystick" );
 
 		DebugPrintf( 
 			"joysticks_init: joystick (%d), name='%s', axises=%d, buttons=%d, hats=%d\n", 

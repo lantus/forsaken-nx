@@ -142,7 +142,7 @@ void DebugPrintf( const char * format, ... ) // timestamp prefix
 	int buf_length;
 	va_list args;
 
-	if(!Debug)
+	if(Debug)
 		return;
 
 #ifndef __SWITCH__	

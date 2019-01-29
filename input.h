@@ -125,7 +125,11 @@ mouse_state_t* read_mouse(void);
 // Joysticks //
 ///////////////
 
+#ifdef __SWITCH__
+#define MAX_JOYSTICKS			8
+#else
 #define MAX_JOYSTICKS			16
+#endif	
 #define MAX_JOYSTICK_BUTTONS	128
 #define MAX_JOYSTICK_POVS		4
 #define MAX_JOYSTICK_AXIS		8

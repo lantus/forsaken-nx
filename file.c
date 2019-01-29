@@ -334,7 +334,7 @@ char* find_file( char * str )
 {
 	char * path = convert_path(str);
 	DebugPrintf("file: find_file called with %s\n",path);
-	if (glob_pos >= 0)
+/*	if (glob_pos >= 0)
 		globfree(&glob_handle);
 	switch( glob(path, 0, find_globerr, &glob_handle) )
 	{
@@ -355,7 +355,7 @@ char* find_file( char * str )
 		default:
 			DebugPrintf("file: find_file: unknown return value from glob()\n");
 			break;
-	}
+	} */
 	return NULL;
 }
 

@@ -63,6 +63,7 @@ const char * render_error_description( int e );
 		while( ( e = glGetError() ) != GL_NO_ERROR ) \
 		{ \
 			render_last_gl_error = e; \
+			svcOutputDebugString("GL ERROR",20); \
 			DebugPrintf( "GL error: %s (%s:%d)\n", \
 				gluErrorString(e),  __FILE__, __LINE__ ); \
 		} \
